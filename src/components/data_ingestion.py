@@ -23,7 +23,7 @@ class DataIngestion:
         df = pd.read_csv('notebook\data\games.csv')
         logging.info('Read the data from source')
 
-        os.mkdir(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
+        os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
 
         df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
 
