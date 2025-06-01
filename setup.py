@@ -14,7 +14,7 @@ def get_requirements(file_name:str)->List[str]:
     return requirements
 
 setup(
-    name='BostonPrice',
+    name='BoardGame',
     version='0.0.1',
     author='Prashu',
     author_email='jaebum@gmail.com',

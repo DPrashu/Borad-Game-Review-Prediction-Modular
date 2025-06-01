@@ -1,10 +1,8 @@
 import os
 import sys
 import pandas as pd
-import numpy as np
 
 from src.exception import CustomException
-from src.logger import logging
 from src.utils import load_object
 
 class CustomData:
@@ -28,26 +26,26 @@ class CustomData:
     def get_data_as_DataFrame(self):
         try:
             dict = {
-                'type' : self.type,
-                'yearpublished' : self.yearpublished,
-                'minplayers' : self.minplayers,
-                'maxplayers' : self.maxplayers,
-                'playingtime' : self.playingtime,
-                'minage' : self.minage,
-                'users_rated' : self.users_rated,
-                'bayes_average_rating' : self.bayes_average_rating,
-                'total_traders' : self.total_traders,
-                'total_wanters' : self.total_wanters,
-                'total_wishers' : self.total_wishers,
-                'average_weight' : self.average_weight
+                'type' : [self.type],
+                'yearpublished' : [self.yearpublished],
+                'minplayers' : [self.minplayers],
+                'maxplayers' : [self.maxplayers],
+                'playingtime' : [self.playingtime],
+                'minage' : [self.minage],
+                'users_rated' : [self.users_rated],
+                'bayes_average_rating' : [self.bayes_average_rating],
+                'total_traders' : [self.total_traders],
+                'total_wanters' : [self.total_wanters],
+                'total_wishers' : [self.total_wishers],
+                'average_weight' : [self.average_weight]
             }
 
-            return pd.DataFrame(dict,index=False,header=True)
+            return pd.DataFrame(dict)
             
         except Exception as e:
             raise CustomException(e,sys)
 
-class predict_pipeline:
+class predict_pipe:
     def __init__(self):
         pass
 
